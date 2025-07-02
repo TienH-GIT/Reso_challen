@@ -1,11 +1,11 @@
-## EXECUTIVE SUMMARY
+# SYSTEM ANALYSIS REPORT
 
-The current system is facing critical performance and scalability challenges across the database, application, and infrastructure layers. Key findings include a dramatic increase in average database query time (from 50ms to 500ms), frequent maxing out of the connection pool, and missing indexes on high-traffic queries—all contributing to significant backend delays. Application performance has also degraded, with page load times rising from 2 seconds to 8 seconds during peak hours and API response times spiking to 2 seconds. The infrastructure is constrained by a single EC2 instance (t3.xlarge), lacks caching mechanisms such as Redis or a CDN, and has limited observability due to minimal monitoring. These bottlenecks are severely impacting user experience, increasing system resource consumption (RAM at 80% and CPU at 90%), and pose a risk to business continuity as traffic and data volume continue to grow. Immediate optimization and scaling measures are required to restore system reliability and support ongoing business operations.
+## Executive Summary
 
-TechMart Inc., a rapidly growing e-commerce platform, is experiencing significant performance degradation due to a 3× increase in user activity over the past six months. Key performance bottlenecks include database query latency, application resource exhaustion, and a non-scalable infrastructure. These issues have led to a 20% revenue loss, a 35% cart abandonment rate, and rising customer dissatisfaction. The platform’s current monolithic architecture, single-server deployment, and lack of caching or auto-scaling mechanisms are insufficient to meet the new scale of operations.
+TechMart Inc., a growing e-commerce platform, is experiencing critical performance degradation due to a 3× increase in user activity over the past six months. Key performance bottlenecks include database query latency, application resource exhaustion, and a non-scalable infrastructure. These issues have led to a 20% revenue loss, a 35% cart abandonment rate, and rising customer dissatisfaction. The platform’s current monolithic architecture, single-server deployment, and lack of caching or auto-scaling mechanisms are insufficient to meet the new scale of operations.
 
 
-## CURRENT SYSTEM ANALYSIS
+## Current System Analysis
 ### Architecture Overview
 TechMart operates a monolithic architecture hosted on a single AWS EC2 instance (t3.xlarge). It includes:
 - **Frontend**: React 18, served as static files from EC2.
